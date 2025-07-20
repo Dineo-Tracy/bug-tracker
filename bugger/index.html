@@ -1,0 +1,151 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🐞Bug Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: #4A90E2;
+    }
+
+    .navbar-brand, .nav-link, .btn {
+      color: #fff !important;
+    }
+
+    .btn-pink {
+      background-color: #4A90E2;
+      color: white;
+      transition: 0.3s ease-in-out;
+    }
+
+    .btn-pink:hover {
+      background-color: #4A90E2;
+    }
+
+    .card {
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .feature-image {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.5s ease;
+    }
+
+    .feature-image:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    h2 {
+      color: #4A90E2;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">🐞Bug Tracker</a>
+    <div class="d-flex">
+      <a href="register.php" class="btn btn-outline-light me-2">Register</a>
+      <a href="login.php" class="btn btn-light">Login</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="container text-center mt-5">
+  <h1 class="fw-bold" style="color:#4A90E2">Track and Fix Bugs.</h1>
+  <p class="text-secondary">Effortless bug tracking for developers.</p>
+  <a href="register.php" class="btn btn-pink btn-lg mt-3">Get Started</a>
+</div>
+
+<!-- FEATURE IMAGE SECTION -->
+<section class="container">
+  <div class="row text-center align-items-center mb-5 fade-in">
+    <div class="col-md-6">
+      <img src="images/undraw_data-reports_l2u3.png" alt="Track Bugs" class="feature-image">
+    </div>
+    <div class="col-md-6">
+      <h2>Track Bugs Instantly</h2>
+      <p>See all reported bugs in one beautiful dashboard. Filter, search, and manage everything in real time.</p>
+    </div>
+  </div>
+
+  <div class="row text-center align-items-center mb-5 flex-md-row-reverse fade-in">
+    <div class="col-md-6">
+      <img src="images/undraw_team-collaboration_phnf.png" alt="Team Collaboration" class="feature-image">
+    </div>
+    <div class="col-md-6">
+      <h2>Collaborate with Your Team</h2>
+      <p>Assign bugs to teammates, track progress, and communicate better — all in one place.</p>
+    </div>
+  </div>
+
+  <div class="row text-center align-items-center mb-5 fade-in">
+    <div class="col-md-6">
+      <img src="images/undraw_bug-fixing_sgk7.png" alt="Fix Fast" class="feature-image">
+    </div>
+    <div class="col-md-6">
+      <h2>Fix Issues Faster</h2>
+      <p>Spend less time on organizing and more on fixing. Stay productive and focused.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 mt-5" style="background-color: #4A90E2; color: white;">
+  &copy; 2025🐞Bug Tracker.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appear = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  faders.forEach(fader => {
+    appear.observe(fader);
+  });
+</script>
+
+</body>
+</html>
